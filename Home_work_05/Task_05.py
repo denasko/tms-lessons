@@ -10,4 +10,4 @@ def get_most_frequent_word(text: str) -> str:
 
 
 print(get_most_frequent_word("Please help me to learn Python Python"))
-print((get_most_frequent_word("if i don't learn Python i go to the ZAVOD")))
+print(get_most_frequent_word("if i don't learn Python i go to the ZAVOD"))
