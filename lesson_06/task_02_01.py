@@ -13,6 +13,7 @@ for i in input_list():
 print(num)
 print([str(i) for i in input_list()])
 print(list(map(str, input_list())))
+
 # Дан список чисел.
 # Разделите каждый элемент на 100 и округлите до целого числа (функция round).
 for i in input_list():
