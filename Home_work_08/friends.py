@@ -21,7 +21,7 @@ def get_oldest_person(friends: list):
     if oldest_person:
         oldest_person.print_person_info()
     else:
-        raise 'Произошла смэрд'
+        raise 'Произошла ошибка'
 
 
 def filter_male_person(friends: list):
