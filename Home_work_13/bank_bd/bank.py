@@ -125,8 +125,8 @@ def save_accounts(bank_accounts: list[BankAccount], file_name: str):
 
 def load_accounts(file_name: str):
     try:
-        with sqlite3.connect(file_name) as connection:
-            cursor = connection.execute("""SELECT * FROM bank_accounts""")
+        with sqlite3.connect(file_name) as conn:
+            cursor = conn.execute("""SELECT * FROM bank_accounts""")
             accounts = cursor.fetchall()
             if accounts:
                 return {account[3]: BankAccount(*account) for account in accounts}
