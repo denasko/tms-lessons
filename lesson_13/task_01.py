@@ -2,13 +2,13 @@ import sqlite3
 
 
 def get_full_users():
-    with sqlite3.connect("sqlite.db") as conn:
+    with sqlite3.connect("../lesson_14/sqlite.db") as conn:
         result = conn.execute('SELECT * FROM user')
         return result.fetchall()
 
 
 def get_users(age: int):
-    with sqlite3.connect("sqlite.db") as conn:
+    with sqlite3.connect("../lesson_14/sqlite.db") as conn:
         result = conn.execute(f'SELECT * FROM user WHERE age>? ORDER BY age', [age])
         return result.fetchall()
 
