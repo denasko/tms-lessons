@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{article.title}}</title>
+</head>
+<body>
+        <a href='/articles'>Go to home page</a>
+            <h1 align="center"> {{article.title.title()}} </h1>
+            <h3> Author: {{article.author.title()}} </h3>
+            <ul type=square>
+            <p>{{article.text}}</p>
+            </ul>
+            <hr>
+            <form action="/article/like" method="post">
+            <input type="hidden" name="article_id" value="{{article.id}}"/>
+           <input type="submit" value="Like: {{article.like_count}}"/>
+       </form>
+</body>
+</html>
+
+

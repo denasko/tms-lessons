@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Articles APP</title>
+</head>
+<body>
+<h1 align="center"> All Articles </h1>
+        <ul type=square>
+            {% for pr in articles %}
+            <li><u><a href='/article/{{pr.id}}'>{{pr.title}}</a></u></li>
+            {% endfor %}
+        </ul>
+        <hr>
+            <form action="/login" method="get">
+           <input type="submit" title="go to login page" value="Login in account"/>
+           </form>
+
+            <form action="/auth" method="get">
+           <input type="submit" title="go to auth page" value="Create new account"/>
+           </form>
+
+            <form action="/logout" method="get">
+           <input type="submit" title="log out of your account?" value="Logout"/>
+            </form>
+            {% for msg in get_flashed_messages() %}
+<div class="flash" align="center">{{msg}} <span style="background-color:#ffff00; font-size:14pt;">&#128522;</span> </div>
+            {% endfor %}
+</body>
+</html>
+
+
+
+
