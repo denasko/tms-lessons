@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet"/>
+{% block title -%}
+{% if title %}
+         <title> {{title}} </title>
+{% else %}
+         <title>All products</title>
+{% endif %}
+{% endblock %}
+</head>
+<body>
+{% block content -%}
+         {%- block mainmenu -%}
+<ul class="mainmenu">
+         <li><a href="/">To main menu</a></li>
+         <li><a href="/favorites">Favorites product</a></li>
+         {% if auth == False -%}
+            {% for m in menu -%}
+                <li><a href="/{{m.lower()}}">{{m}}</a></li>
+         {% endfor -%}
+         {% else -%}
+            <li><a href="/logout">Logout</a></li>
+            <h4 align="right">User: {{auth.title()}}</h4>
+         {% endif -%}
+         {% endblock mainmenu -%}
+</ul>
+<div class="clear"></div>
+<div class="content">
+         {% if title -%}
+<h1 align="center">{{title}}</h1>
+         {% else -%}
+<h1>All products</h1>
+         {% endif -%}
+{% endblock -%}
+    </div>
+ <ul  class="footer">
+                <li>Все права защищены &copy; 2023</li>
+                <li>Контактная информация: Напишите в телегу</li>
+                <p>Не отчисляйте пожалуйста!</p>
+
+         
+  </ul>
+</body>
+</html>

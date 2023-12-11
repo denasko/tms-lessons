@@ -1,0 +1,86 @@
+html, body {
+    font-family:'Arial';
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    color: : #0059b2;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF8C00;
+    text-decoration: underline;
+}
+
+.clear{clear: both;}
+
+ul.mainmenu{
+    list-style: none;
+    background: #008B8B;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-family: 20px;
+    overflow: hidden;
+}
+ul.mainmenu li{
+    float: left;
+    margin: 18px 40px 0 50px;
+}
+ul.mainmenu li.last {float: right;}
+
+ul.mainmenu li a {
+    color: #000000;
+    text-decoration: none;
+}
+ul.mainmenu li a:hover{
+    color: #FF8C00;
+}
+
+div.content{
+    margin: 10px;
+}
+
+.form-contact label {
+    display: inline-block;
+    min-width: 80px;
+}
+.form-contact p {margin: 10px 0 10px 0;}
+
+}
+
+.flash {padding: 10px;}
+.flash.success{
+    border: 1px solid #21DB56;
+}
+
+ul.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  list-style: none;
+  background: #008B8B;
+  color: #000000;
+  font-family: 20px;
+  overflow: hidden;
+}
+
+
+ul.footer li{
+    float: left;
+    margin: 18px 40px 0 50px;
+}
+ul.footer li.last {float: right;}
+
+ul.footer li a {
+    color: #000000;
+    text-decoration: none;
+}
+ul.footer li a:hover{
+    color: #FF8C00;

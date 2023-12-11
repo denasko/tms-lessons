@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+            <h3> Category: <u><a href="/category/{{category_name[0]}}"> {{category_name[0]}} </a></u></h3>
+            <ul type=square>
+            <p>{{product.description}}</p>
+            </ul>
+            <div>
+                <div style="float: left">
+                    <form action="/product/like" method="post">
+                        <input type="hidden" name="product_name" value="{{product.name}}"/>
+                        <input title="Like" type="submit" value="Like: {{product.like_count}}"/>
+                    </form>
+                </div>
+            {% for msg in get_flashed_messages() %}
+<div class="flash" align="center">{{msg}} <span style="background-color:#ffff00; font-size:14pt;">&#128522;</span> </div>
+            {% endfor %}
+
+    <form action="/product/favorites" method="post">
+        <input type="hidden" name="product_name" value="{{product.name}}"/>
+        <input title="Add to favorites" type="submit" value="Favorites &#10027"/>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+        <p>Enter your username and password:</p>
+<form action="/login" method="post"class="form-contact">
+<p><label>Login: </label> <input type="text" name="login" value="" requied />
+<p><label>Password: </label> <input type="text" name="password" value="" requied />
+<p><input type="submit" value="Login" />
+</form>
+    {% for msg in get_flashed_messages() %}
+    <div class="flash" align="center">{{msg}} <span style="background-color:#ffff00; font-size:14pt;">&#128545;</span> </div>
+    {% endfor %}
+{% endblock %}

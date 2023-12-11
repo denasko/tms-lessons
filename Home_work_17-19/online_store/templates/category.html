@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+        <ul type=square>
+            {% for pr in products %}
+                <li><u><a href='/product/{{pr.name}}'>{{pr.name}}</a></u></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
+

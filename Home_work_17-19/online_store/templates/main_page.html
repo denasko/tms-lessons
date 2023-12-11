@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<ul
+        {% set ns = namespace(category = '') -%}
+        type=square>{% for product in data -%}
+                    {% if product[0]!=ns.category -%}
+                    {% set ns.category=product[0] -%}
+        <br><li><b><a href="/category/{{product[0]}}"> {{product[0]}} </a></b></li>
+        <li><u><a href="/product/{{product[1]}}"> {{product[1]}}</a></u></li>
+                {% else %}
+        <li><u><a href="/product/{{product[1]}}"> {{product[1]}}</a></u></li> 
+                {% endif %}
+                {% endfor %}
+             
+</ul>
+{% for msg in get_flashed_messages() %}
+<div class="flash" align="center">{{msg}} <span style="background-color:#ffff00; font-size:14pt;">&#128522;</span> </div>
+        {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

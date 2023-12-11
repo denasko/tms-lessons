@@ -13,7 +13,7 @@ for friend in my_friends:
 
 def get_oldest_person(friends: list):
     old = 0
-    oldest_person=None
+    oldest_person = None
     for bro in friends:
         if bro.age > old:
             old = bro.age
