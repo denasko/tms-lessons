@@ -37,7 +37,7 @@ def load_product(product_name: str, flag_raise=True) -> Product | None:
                            like_count=result[4])
         elif flag_raise is False:
             return None
-        raise ValueError(f'Article with ID = {product_name}  not found')
+        raise ValueError(f'product with name = {product_name}  not found')
 
 
 def save_product(product: Product):
@@ -100,7 +100,7 @@ def page_not_found(error):
 def show_product_id(product_name: 'Product.name'):
     product = load_product(product_name, flag_raise=False)
     if product is None:
-        abort(404, 'Article not found')
+        abort(404, 'Product not found')
     category_name = get_category_name(product_name)
     return render_template('product_page.html', product=product, category_name=category_name,
                            auth=session['is_auth'], title=product.name, menu=['Authorization', 'Login'])
@@ -132,7 +132,7 @@ def show_category(category_name: str):
 def like_product():
     product_name = str(request.form['product_name'])
     product = load_product(product_name)
-    liked_products = session.setdefault('liked_articles', set())
+    liked_products = session.setdefault('liked_product', set())
     if session['is_auth']:
         if product_name in liked_products:
             product.like_count -= 1
