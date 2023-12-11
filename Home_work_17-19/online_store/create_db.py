@@ -45,7 +45,8 @@ def save_product(product: Product):
         conn.execute('UPDATE product '
                      'SET name = ?, description = ?, category_id = ? ,like_count = ?'
                      'WHERE name = ?',
-                     (product.name, product.description, product.category_id, product.like_count, product.name))
+                     (product.name, product.description, product.category_id, product.like_count,
+                      product.name))
 
 
 def load_product_category(category_name: str) -> list:
@@ -63,7 +64,7 @@ def load_product_category(category_name: str) -> list:
     return result
 
 
-def get_category_name(product_name: 'Product.name')->tuple:
+def get_category_name(product_name: 'Product.name') -> tuple:
     with sqlite3.connect(PATH) as conn:
         category_name = conn.execute("""SELECT DISTINCT category.name
                                     FROM category JOIN product
@@ -158,10 +159,8 @@ def favor_product():
         flash('Product added from favorites ')
     save_product(product)
     return redirect(
-        url_for('show_product_id', product_name=product_name, menu=['Authorization', 'Login'], auth=session['is_auth']))
-
-
-# ----------------------------------------REGISTRATION-------------------------------------------------------
+        url_for('show_product_id', product_name=product_name, menu=['Authorization', 'Login'],
+                auth=session['is_auth']))
 
 
 def check_user(login: 'User.login', ps: 'User.password') -> User | None:
